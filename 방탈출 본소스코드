@@ -28,6 +28,7 @@ void brandpicture();    // 방탈출 로고
 void startpicture();
 void titleDraw();
 void menuDraw();
+void secondgamemiro(); // 2스테이지 미로출력
 
 void startpicture()
 {
@@ -403,10 +404,17 @@ void twostage()
     printf("두번째 스테이지 시작");
     titleDraw();
     menuDraw();
-    /*sleep(1000);
-    system("cls");*/
+    system("cls");
+    system("mode con cols=200 lines=100 | title 게임제목 ");
+    secondgamemiro();
+    do {
 
+    MovePlayer();
 
+    //플레이어 출력
+    gotoxy(10 ,50);
+    printf("□");
+    } while (1);
 }
 
 void brandpicture()
@@ -423,6 +431,80 @@ void brandpicture()
     printf("                         ■■■       ■     ■   ■     ■     ■   ■   ■\n");
     printf("                         ■   ■      ■     ■   ■     ■     ■        ■\n");
     printf("                         ■    ■      ■■■      ■■■       ■        ■\n");
+}
+void secondgamemiro()
+{
+        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        printf("                                                                                                                            ■■            ■■\n");
+        printf("                                                                                                                            ■■            ■■\n");
+        printf("                                                                                                                            ■■            ■■\n");
+        printf("                                                                                                                            ■■            ■■\n");
+        printf("                                                                                                                            ■■            ■■\n");
+        printf("                                                                                                                            ■■            ■■\n");
+        printf("                                                                                                                            ■■            ■■\n");
+        printf("                                                                                                                            ■■            ■■\n");
+        printf("                                                                                                                            ■■            ■■\n");
+        printf("                                                                                                                            ■■            ■■\n");
+        printf("                                                                                                                            ■■            ■■\n");
+        printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■            ■■\n");
+        printf("■■                                                                                                                                        ■■\n");
+        printf("■■                                                                                                                                        ■■\n");
+        printf("■■                                                                                                                                        ■■\n");
+        printf("■■                                                                                                                                        ■■\n");
+        printf("■■                                                                                                                                        ■■\n");
+        printf("■■                                                                                                                                        ■■\n");
+        printf("■■                                                                                                                                        ■■\n");
+        printf("■■                                                                                                                                        ■■\n");
+        printf("■■                                                                                                                                        ■■\n");
+        printf("■■                                                                                                                                        ■■\n");
+        printf("■■                                                                                                                                        ■■\n");
+        printf("■■                                                                                                                                        ■■\n");
+        printf("■■                                                                                                                                        ■■\n");
+        printf("■■                                                                                                                                        ■■\n");
+        printf("■■                                                                                                                                        ■■\n");
+        printf("■■                ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
+        printf("■■                ■\n");
+        printf("■■                ■\n");
+        printf("■■                ■\n");
+        printf("■■                ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
+        printf("■■                                                                                                                      ■■ \n");
+        printf("■■                                                                                                                      ■■ \n");
+        printf("■■                                                                                                                      ■■ \n");
+        printf("■■                                                                                                                      ■■ \n");
+        printf("■■                                                                                                                      ■■ \n");
+        printf("■■                                                                                                                      ■■ \n");
+        printf("■■                                                                                                                      ■■ \n");
+        printf("■■■■■■■■■■■■■■■■■■■■■■              ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
+        printf("                                        ■■              ■■\n");
+        printf("                                        ■■              ■■\n");
+        printf("                                        ■■              ■■\n");
+        printf("                                        ■■              ■■\n");
+        printf("                                        ■■              ■■\n");
+        printf("  ■■■■■■■■■■■■■■■■■■■■■              ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
+        printf("  ■■                                                                                                                                                ■■\n");
+        printf("  ■■                                                                                                                                                ■■\n");
+        printf("  ■■                                                                                                                                                ■■\n");
+        printf("  ■■                                                                                                                                                ■■\n");
+        printf("  ■■                                                                                                                                                ■■\n");
+        printf("  ■■                                                                                                                                                ■■\n");
+        printf("  ■■■■■■■■■■■■■■■■■■■■■              ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                  ■■\n");
+        printf("  ■■■■■■■■■■■■■■■■■■■■■              ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                  ■■\n");
+        printf("                                        ■■              ■■                                                                  ■■                  ■■\n");
+        printf("                                        ■■              ■■                                                                  ■■                  ■■\n");
+        printf("                                        ■■              ■■                                                                  ■■                  ■■\n");
+        printf("                                        ■■              ■■                                                                  ■■                  ■■\n");
+        printf("                                        ■■              ■■                                                                  ■■                  ■■\n");
+        printf("                                        ■■              ■■                                                                  ■■                  ■■\n");
+        printf("                                        ■■              ■■                                                                  ■■                  ■■\n");
+        printf("                                        ■■              ■■                                                                  ■■                  ■■\n");
+        printf("                                        ■■              ■■                                                                  ■■                  ■■\n");
+        printf("                                        ■■              ■■                                                                  ■■                  ■■\n");
+        printf("                                        ■■              ■■                                                                  ■■                  ■■\n");
+        printf("                                        ■■              ■■                                                                  ■■                  ■■\n");
+        printf("                                        ■■              ■■                                                                  ■■■■■■■■■■■■■\n");
+        printf("                                        ■■              ■■                                                                  \n");
+        printf("                                        ■■              ■■                                                                 \n");
+        printf("                                        ■■              ■■                                                                \n");
 }
 
 void titleDraw() {
