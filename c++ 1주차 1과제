@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+class Sample {
+int* p;
+int size;
+public:
+Sample(int n) {
+size = n; p = new int[n];
+}
+void read()
+{
+int read1;
+for (int i = 0; i < size ; i++)
+{
+cin >> read1;
+p[i] = read1;
+}
+}
+void write()
+{
+for (int i = 0; i < size ; i++)
+{
+cout << p[i] << " ";
+}
+cout << endl;
+}
+int big()
+{
+int first = p[0];
+for(int i = 1; i < size+1 ; i++)
+{
+if (first < p[i])
+{
+first = p[i];
+}
+}
+return first;
+}
+~Sample()
+{
+cout << "소멸자 호출" << endl;
+}
+};
+int main()
+{
+Sample s(10);
+s.read();
+s.write();
+cout << "가장큰수는" << s.big() << endl;
+}
