@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+class Sample {
+int* p;
+int size;
+public:
+Sample(int n) {
+size = n; p = new int[n];
+}
+void read()
+{
+int read1;
+for (int i = 0; i < size; i++)
+{
+cin >> read1;
+p[i] = read1;
+}
+}
+void write()
+{
+cout << "정수" << size << "개를 입력해주세요" << endl;
+}
+int big()
+{
+int all = 0;
+for (int i = 0; i < size; i++)
+{
+all = p[i] + all;
+}
+all = all / size;
+return all;
+}
+~Sample()
+{
+cout << "소멸자 호출" << endl;
+}
+};
+int main()
+{
+Sample s(10);
+s.write();
+s.read();
+cout << "평균" << s.big() << endl;
+}
+
+ 
