@@ -2,9 +2,9 @@
 int main()
 {
 	using namespace std;
-	int R_cnt = 0; 
+	int R_total = 0; 
 	int R_seat = 0;
-	int C_cnt = 0;
+	int C_total = 0;
 	int C_seat = 0;
 	int N;
 	char map[101][101];
@@ -33,12 +33,12 @@ int main()
 			{ // 짐일 경우 
 				if (R_seat >= 2) 
 				{
-					++R_cnt; 
+					++R_total; 
 				} 
 				R_seat = 0;
 			}
 		} // 벽일 경우 
-		if (R_seat >= 2) { ++R_cnt; }
+		if (R_seat >= 2) { ++R_total; }
 	}
 
 	for (int i = 0; i < N; i++) {
@@ -54,12 +54,12 @@ int main()
 			{ // 짐일 경우 
 				if (C_seat >= 2)
 				{
-					++C_cnt;
+					++C_total;
 				}
 				C_seat = 0;
 			}
 		} // 벽일 경우 
-		if (C_seat >= 2) { ++C_cnt; }
+		if (C_seat >= 2) { ++C_total; }
 	}
-	cout << R_cnt << " " << C_cnt;
+	cout << R_total << " " << C_total;
 }
