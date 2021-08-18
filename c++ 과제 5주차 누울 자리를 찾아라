@@ -1,0 +1,65 @@
+#include<iostream>
+int main()
+{
+	using namespace std;
+	int R_cnt = 0; 
+	int R_seat = 0;
+	int C_cnt = 0;
+	int C_seat = 0;
+	int N;
+	char map[101][101];
+
+	cin >> N;
+
+	char k;
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < N; j++) {
+			cin >> k;
+			if (k == '.') map[i][j] = '.';
+			else map[i][j] = 'X';
+		}
+	}
+
+	for (int i = 0; i < N; i++) {
+		R_seat = 0; 
+		
+		for (int j = 0; j < N; j++) 
+		{
+			if (map[i][j] == '.') 
+			{
+				++R_seat;
+			}
+			else 
+			{ // 짐일 경우 
+				if (R_seat >= 2) 
+				{
+					++R_cnt; 
+				} 
+				R_seat = 0;
+			}
+		} // 벽일 경우 
+		if (R_seat >= 2) { ++R_cnt; }
+	}
+
+	for (int i = 0; i < N; i++) {
+		C_seat = 0;
+
+		for (int j = 0; j < N; j++)
+		{
+			if (map[j][i] == '.')
+			{
+				++C_seat;
+			}
+			else
+			{ // 짐일 경우 
+				if (C_seat >= 2)
+				{
+					++C_cnt;
+				}
+				C_seat = 0;
+			}
+		} // 벽일 경우 
+		if (C_seat >= 2) { ++C_cnt; }
+	}
+	cout << R_cnt << " " << C_cnt;
+}
