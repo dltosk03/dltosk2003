@@ -1,0 +1,22 @@
+#include <iostream>
+
+int main()
+{
+	using namespace std;
+	int R, T;
+	string S;
+	cin >> T;
+	for (int j = 0; j < T; j++)
+	{
+		cin >> R >> S;
+		int end = S.size();
+		for (int k = 0; k < end; k++)
+		{
+			for (int i = 0; i < R; i++)
+			{
+				cout << S[k];
+			}
+		}
+		cout << endl;
+	}
+}
