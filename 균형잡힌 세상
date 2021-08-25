@@ -1,0 +1,47 @@
+#include <iostream>
+#include <string>
+#include <stack>
+using namespace std;
+
+int main() {
+	while (1) {
+		stack<char> st;
+		int count = 0;
+		string str;
+		getline(cin, str);
+		if (str == ".") 
+			break;
+		for (int i = 0; i < str.length(); i++)
+		{
+			if (str[i] == '(' || str[i] == '[')
+				st.push(str[i]);
+			else if (str[i] == ')')
+			{
+				if (!st.empty() && st.top() == '(')
+					st.pop();
+				else {
+					cout << "no" << endl;
+					count++;
+					break;
+				}
+			}
+			else if (str[i] == ']') {
+				if (!st.empty() && st.top() == '[')
+					st.pop();
+				else
+				{
+					cout << "no" << endl;
+					count++;
+					break;
+				}
+			}
+		}
+		if (count != 0)
+			continue;
+		if (!st.empty())
+			cout << "no" << endl;
+		else
+			cout << "yes" << endl;
+	}
+	return 0;
+}
