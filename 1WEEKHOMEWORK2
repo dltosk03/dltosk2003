@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> 로그  </title>
+</head>
+<body>
+  <h3>회원가입</h3>
+  <form method ="post">
+    <br> 아이디 <input type="text" name="id"> </br>
+    <br> 비밀번호 <input type ="password" name="pw"> </br>
+    <br> <input type="submit" value="로그인">
+    <a href ="1WEEKHOMEWORK1.html">
+    <input type="button" value="회원가입"> </a> </br>
+  </form>
+</body>
+
+</html>
