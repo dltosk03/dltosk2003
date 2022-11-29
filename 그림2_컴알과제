@@ -1,0 +1,58 @@
+#include <iostream>
+using namespace std;
+int main() {
+	int num = 1; //배열에 넣는 값
+	int count = 0; //반복의 조건 변수
+	int n = 0, m = 0; //행과 열
+	int CN = 1; //행또는 열을 증가시킬지 감소시킬지에 대한 기준점이 되는 스위치 변수
+	int A[5][5] = { 0 };
+	A[n][m] = num++; //첫 num 변수 값 1을 A(0,0)에 넣어줌
+
+	while (count <= 4) { //cout가 0~4일때 반복 시켜주고 5일때 break
+		if (CN == 1) { 
+			if (count == 0) n++; //첫 count값이 0인 경우에는 행을 1 증가시킴
+			else m++; //그 외에는 열의 값 증가
+			while (n >= 0) { // 마지막 행값까지 반복
+				A[n--][m++] = num++; // 행을 감소 열을 증가시킴
+			}
+			CN = -CN; //스위치 변수 부호 반전
+			count++; //cout 증가
+		}
+		else if (CN == -1) {
+			n++; //행의 값 증가
+			while (m >= 0) { //마지막 열값까지 반복
+				A[n++][m--] = num++; // 행을 증가 열을 감소시킴
+			}
+			CN = -CN;
+		}
+		count++;
+	} 
+	while (count != 0){ // num이 16일 때부터 실행되는 반복문으로 5~1때까지 반복되고 count가 0이되면 break
+		if (CN == 1) { 
+			n = 4; // A(4,1)에 16을 넣는 것부터 시작이기때문에 n=1로 초기화시키는 위명령문과는 달리 n=4로 초기화
+			m = 5 - count; // 감소하는 count를 이용하여 m값도 1씩 증가시켜 초기화
+			while (m <5) { // 마지막 열값까지 반복
+				A[n--][m++] = num++; // 행을 감소 열을 증가시킴
+			}
+			CN = -CN;
+			count--;
+		}
+		else if (CN == -1) {
+			n = 5 - count; // 감소하는 count를 이용하여 n값도 1씩 증가시켜 초기화
+			m = 4;
+			while (n<5) { // 마지막 행값까지 반복
+				A[n++][m--] = num++;
+			}
+			CN = -CN;
+			count--;
+		}
+	}
+
+	for (int i = 0; i < 5; i++) { //전체 배열 출력
+		for (int j = 0; j < 5; j++) {
+			if (A[i][j] < 10) cout << " " << A[i][j] << " ";
+			else cout << A[i][j] << " ";
+		}
+		cout << endl;
+	}
+}
