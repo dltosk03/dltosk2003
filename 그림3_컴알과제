@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+int main() {
+	int num = 26;
+	int S = 1; // 행또는 열을 더하거나 빼주는 변수
+	int n = -1; //행
+	int m = 0; //열
+	int K = 5; //무한 반복문을 벗어나게 해주는 변수
+	int A[5][5] = { 0 };
+	while(1){
+		for (int i = 0; i < K; i++) { //K값까지 반복
+			n = n + S; //행을 S만큼 더해준다
+			A[n][m] = --num; 
+		}
+		K--; // K값 감소시킴
+		if (K <= 0) break; //K값이 0이면 break
+		for (int i = 0; i < K; i++) { //K값까지 반복
+			m = m + S; //행을 S만큼 더해준다
+			A[n][m] = --num;
+		}
+		S = S * (-1); //S값 부호를 반전시킨다
+	}
+	for (int i = 0; i < 5; i++) { //전체 배열 출력
+		for (int j = 0; j < 5; j++) {
+			if (A[i][j] < 10) cout << " " << A[i][j] << " ";
+			else cout << A[i][j] << " ";
+		}
+		cout << endl;
+	}
+}
